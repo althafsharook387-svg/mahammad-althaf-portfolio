@@ -594,3 +594,90 @@ body.is-ready .hero__photo img { animation: photo-in 1.35s var(--ease) .3s both;
 .edu__score strong { display: flex; align-items: baseline; gap: 1px; }
 .edu__score strong i { font-style: normal; font-size: .72em; opacity: .8; }
 .edu__score strong:has(i) { font-size: 1.24rem; }
+
+/* ============================================================
+   RESEARCH / DISSERTATION
+   ============================================================ */
+.study {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--r); box-shadow: var(--shadow);
+  padding: 38px 38px 32px; overflow: hidden; position: relative;
+}
+.study::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), color-mix(in srgb, var(--accent) 18%, transparent));
+}
+
+.study__head {
+  display: flex; gap: 32px; align-items: flex-start; justify-content: space-between;
+  padding-bottom: 28px; margin-bottom: 30px; border-bottom: 1px solid var(--border);
+}
+.study__kicker {
+  font-size: .72rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin-bottom: .8em;
+}
+.study__title { font-size: clamp(1.35rem, 2.5vw, 1.85rem); margin-bottom: .3em; }
+.study__sub { font-size: 1rem; color: var(--text-soft); margin-bottom: .9em; max-width: 60ch; }
+.study__meta { font-size: .82rem; color: var(--text-soft); opacity: .85; margin: 0; max-width: 55ch; }
+.study__dl { flex-shrink: 0; white-space: nowrap; }
+
+.study__body { display: grid; grid-template-columns: 1fr 1fr; gap: 44px; }
+.study__col h4 {
+  font-family: var(--font-sans); font-size: .74rem; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase; color: var(--text-soft);
+  margin: 0 0 1em; padding-bottom: .6em; border-bottom: 1px solid var(--border);
+}
+.study__col h4:not(:first-child) { margin-top: 2em; }
+.study__col p { font-size: .94rem; color: var(--text-soft); }
+.study__col p strong { color: var(--text); font-weight: 600; }
+
+.study__findings { list-style: none; margin: 0 0 1.4em; padding: 0; }
+.study__findings li {
+  position: relative; padding-left: 26px; margin-bottom: 1em;
+  font-size: .94rem; color: var(--text-soft);
+  transition: transform .3s var(--ease);
+}
+.study__findings li strong { color: var(--text); font-weight: 600; }
+.study__findings li::before {
+  content: ""; position: absolute; left: 0; top: .48em;
+  width: 13px; height: 13px; border-radius: 50%;
+  border: 2px solid var(--accent); opacity: .75;
+  transition: transform .3s var(--ease), opacity .3s;
+}
+.study__findings li:hover { transform: translateX(4px); }
+.study__findings li:hover::before { transform: scale(1.18); opacity: 1; }
+
+.study__take {
+  padding: 16px 20px; border-left: 3px solid var(--accent);
+  background: var(--bg-alt); border-radius: 0 10px 10px 0;
+  font-size: .92rem; color: var(--text) !important; margin: 0;
+}
+
+.study__tags {
+  display: flex; flex-wrap: wrap; gap: 8px; list-style: none;
+  margin: 34px 0 0; padding: 26px 0 0; border-top: 1px solid var(--border);
+}
+.study__tags li {
+  padding: 6px 13px; border-radius: 999px; font-size: .8rem; font-weight: 500;
+  background: var(--bg-alt); border: 1px solid var(--border); color: var(--text-soft);
+  transition: color .2s, border-color .2s, transform .2s var(--ease);
+}
+.study__tags li:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+
+.study__stats {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 18px; margin-top: 30px; padding-top: 26px; border-top: 1px solid var(--border);
+}
+.study__stats div { display: flex; flex-direction: column; gap: 2px; }
+.study__stats strong {
+  font-family: var(--font-display); font-size: 1.75rem; font-weight: 600;
+  color: var(--heading); line-height: 1;
+}
+.study__stats span { font-size: .76rem; color: var(--text-soft); }
+
+@media (max-width: 980px) {
+  .study { padding: 30px 24px 26px; }
+  .study__head { flex-direction: column; gap: 22px; }
+  .study__dl { width: 100%; }
+  .study__body { grid-template-columns: 1fr; gap: 34px; }
+}
