@@ -92,13 +92,14 @@
   var animate = function (el) {
     var target = parseFloat(el.getAttribute('data-count'));
     var decimals = parseInt(el.getAttribute('data-decimal') || '0', 10);
+    var suffix = el.getAttribute('data-suffix') || '';
     var divisor = Math.pow(10, decimals);
     var start = null;
     var step = function (ts) {
       if (start === null) start = ts;
       var p = Math.min((ts - start) / 1100, 1);
       var eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = (target * eased / divisor).toFixed(decimals);
+      el.textContent = (target * eased / divisor).toFixed(decimals) + suffix;
       if (p < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
