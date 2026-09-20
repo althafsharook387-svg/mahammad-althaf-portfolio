@@ -676,3 +676,20 @@ body.is-ready .hero__photo img { animation: photo-in 1.35s var(--ease) .3s both;
   .study__dl { width: 100%; }
   .study__body { grid-template-columns: 1fr; gap: 34px; }
 }
+
+/* sourcing markets chips inside the experience card */
+.markets { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 0; padding: 0; }
+.markets li {
+  padding: 6px 13px; border-radius: 999px; font-size: .82rem; font-weight: 500;
+  background: var(--bg-alt); border: 1px solid var(--border); color: var(--text-soft);
+  transition: color .2s, border-color .2s, transform .2s var(--ease);
+}
+.markets li:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
+.markets .markets__more {
+  background: transparent; border-style: dashed;
+  color: var(--accent); font-style: italic;
+}
+/* the timeline's bullet styling must not leak onto the market chips */
+.tl__body .markets li { padding-left: 13px; margin-bottom: 0; color: var(--text-soft); }
+.tl__body .markets li::before { content: none; }
+.tl__body .markets li:hover { transform: translateY(-2px); color: var(--accent); }
