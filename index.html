@@ -34,7 +34,8 @@
   "sameAs": ["https://www.linkedin.com/in/althaf303"],
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "Sahyadri College of Engineering & Management, Mangalore" },
-    { "@type": "CollegeOrUniversity", "name": "GFGC Uppinangady" }
+    { "@type": "CollegeOrUniversity", "name": "Mangalore University" },
+    { "@type": "EducationalOrganization", "name": "Karnataka State Board" }
   ],
   "worksFor": { "@type": "Organization", "name": "Pacific Engineered Surfaces Pvt Ltd" }
 }
@@ -55,6 +56,7 @@
       <a href="#about">About</a>
       <a href="#expertise">Expertise</a>
       <a href="#experience">Experience</a>
+      <a href="#projects">Research</a>
       <a href="#skills">Skills</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
@@ -215,8 +217,98 @@
     </div>
   </section>
 
+
+  <!-- ========== RESEARCH / PROJECT ========== -->
+  <section class="section section--alt" id="projects">
+    <div class="wrap">
+      <p class="eyebrow reveal">Research</p>
+      <h2 class="section__title reveal">MBA dissertation</h2>
+
+      <article class="study reveal">
+        <header class="study__head">
+          <div>
+            <p class="study__kicker">Capital markets · Event study · 2024–25</p>
+            <h3 class="study__title">Impact of IPO Fund Allocation on Equity Prices</h3>
+            <p class="study__sub">A comparative study of OFS-heavy vs. expansion-focused IPOs in the Indian market (2024)</p>
+            <p class="study__meta">
+              Sahyadri College of Engineering &amp; Management · Visvesvaraya Technological University ·
+              Guided by Asst. Prof. Ramesh K G
+            </p>
+          </div>
+          <a class="btn btn--primary study__dl" data-magnetic
+             href="assets/Mahammad-Althaf-MBA-Project-IPO-Fund-Allocation.pdf" download>
+            <span>Read the full report (PDF)</span>
+          </a>
+        </header>
+
+        <div class="study__body">
+          <div class="study__col">
+            <h4>The question</h4>
+            <p>
+              When an Indian company lists, the money can go one of two ways: to existing
+              shareholders cashing out (Offer for Sale), or into the business itself
+              (expansion-focused fresh issue). Does that choice change how the stock actually
+              performs on listing day — and how much risk investors take on?
+            </p>
+            <p>
+              Global research covers IPO underpricing well, but almost nothing compares these
+              two allocation strategies in the Indian market. That gap is what this study set
+              out to close.
+            </p>
+
+            <h4>What I did</h4>
+            <p>
+              I built a dataset of <strong>330 mainboard IPOs</strong> listed on the NSE and BSE
+              through 2024, pulling from RHP prospectuses, SEBI filings, Chittorgarh, Moneycontrol,
+              Screener and Yahoo Finance — then classified every issue as OFS-heavy or
+              expansion-focused and tracked subscription, grey market premium, listing gain and beta
+              for each.
+            </p>
+            <p>
+              On that base I ran a CAPM framework to separate expected from actual returns,
+              alpha–beta analysis for excess performance, independent-sample t-tests for
+              significance, a decision tree to rank what actually drives listing day returns,
+              plus regression and correlation analysis. Built in
+              <strong>Excel, Python, SPSS and Power BI</strong>.
+            </p>
+          </div>
+
+          <div class="study__col">
+            <h4>What I found</h4>
+            <ul class="study__findings">
+              <li><strong>Expansion IPOs were subscribed 4× harder</strong> — 214.59× average versus 53.68× for OFS-heavy issues.</li>
+              <li><strong>And they listed better</strong> — 52.41% average listing day return against 27.47%.</li>
+              <li><strong>They also carried more risk</strong> — beta of 0.418 versus 0.328, a clean risk–return tradeoff.</li>
+              <li><strong>Alpha favoured growth</strong> — 43.21% excess return versus 18.70%, meaning expansion issues beat what CAPM predicted.</li>
+              <li><strong>Grey market hype barely predicted anything</strong> — GMP-to-listing-return correlation of just 0.081, while beta-to-return ran 0.697.</li>
+            </ul>
+            <p class="study__take">
+              The takeaway: how a company allocates IPO proceeds is a real signal, not a
+              formality. Investors price growth-directed capital more aggressively, and CAPM
+              alone doesn't explain Indian IPO listing behaviour — demand and sentiment do more
+              of the work.
+            </p>
+          </div>
+        </div>
+
+        <ul class="study__tags">
+          <li>CAPM</li><li>Alpha &amp; Beta</li><li>Independent-sample t-test</li>
+          <li>Decision tree</li><li>Regression</li><li>Correlation</li>
+          <li>Event study</li><li>Python</li><li>SPSS</li><li>Power BI</li><li>Advanced Excel</li>
+        </ul>
+
+        <div class="study__stats">
+          <div><strong>330</strong><span>IPOs analysed</span></div>
+          <div><strong>89</strong><span>Page report</span></div>
+          <div><strong>8</strong><span>Week study</span></div>
+          <div><strong>2</strong><span>Exchanges: NSE &amp; BSE</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
   <!-- ========== SKILLS ========== -->
-  <section class="section section--alt" id="skills">
+  <section class="section" id="skills">
     <div class="wrap">
       <p class="eyebrow reveal">Skills &amp; tools</p>
       <h2 class="section__title reveal">The working toolkit</h2>
@@ -262,7 +354,7 @@
   </section>
 
   <!-- ========== EDUCATION ========== -->
-  <section class="section" id="education">
+  <section class="section section--alt" id="education">
     <div class="wrap">
       <p class="eyebrow reveal">Education</p>
       <h2 class="section__title reveal">Academic background</h2>
@@ -279,8 +371,16 @@
           <div class="edu__score"><strong>9.22</strong><span>CGPA / 10</span></div>
           <div>
             <h3>Bachelor of Commerce</h3>
-            <p class="edu__org">GFGC Uppinangady</p>
+            <p class="edu__org">Mangalore University</p>
             <p class="edu__date">Graduated August 2023</p>
+          </div>
+        </article>
+        <article class="edu__item reveal">
+          <div class="edu__score"><strong>93.33<i>%</i></strong><span>Class XII</span></div>
+          <div>
+            <h3>Pre-University — Class XII</h3>
+            <p class="edu__org">Karnataka State Board</p>
+            <p class="edu__date">Completed 2020</p>
           </div>
         </article>
       </div>
