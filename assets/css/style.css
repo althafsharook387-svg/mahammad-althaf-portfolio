@@ -589,3 +589,8 @@ body.is-ready .hero__photo img { animation: photo-in 1.35s var(--ease) .3s both;
   .btn::before { display: none; }
   .timeline__rail i { transform: scaleY(1) !important; }
 }
+
+/* percentage badge (Class XII) sits alongside the CGPA badges */
+.edu__score strong { display: flex; align-items: baseline; gap: 1px; }
+.edu__score strong i { font-style: normal; font-size: .72em; opacity: .8; }
+.edu__score strong:has(i) { font-size: 1.24rem; }
