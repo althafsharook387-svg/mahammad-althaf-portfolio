@@ -18,8 +18,8 @@
   var toggle = document.getElementById('themeToggle');
   if (toggle) {
     toggle.addEventListener('click', function () {
-      var current = root.getAttribute('data-theme');
-      if (!current) current = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      // dark is the brand default, so an unset theme is dark
+      var current = root.getAttribute('data-theme') || 'dark';
       var next = current === 'dark' ? 'light' : 'dark';
       root.setAttribute('data-theme', next);
       try { localStorage.setItem('ma-theme', next); } catch (e) {}
@@ -107,7 +107,7 @@
   }
 
   /* ---------- reveal on scroll ---------- */
-  var revealables = document.querySelectorAll('.reveal, .bar, .corr__row, .flow__step, .demo');
+  var revealables = document.querySelectorAll('.reveal, .bar, .corr__row, .flow__step, .demo, .wave');
   if (reduced || !hasIO) {
     Array.prototype.forEach.call(revealables, function (el) { el.classList.add('is-in'); });
   } else {
@@ -231,6 +231,33 @@
     window.addEventListener('resize', centreMap);
     window.addEventListener('load', centreMap);
   }
+
+  /* ---------- hero globe: draw the arcs, pop the nodes ---------- */
+  var globe = document.querySelector('.globe');
+  if (globe) {
+    var garcs = globe.querySelectorAll('.garc');
+    Array.prototype.forEach.call(garcs, function (path) {
+      var len = 420;
+      try { len = Math.ceil(path.getTotalLength()); } catch (e) {}
+      path.style.setProperty('--glen', len);
+    });
+    var liveGlobe = function () {
+      globe.classList.add('is-live');
+      Array.prototype.forEach.call(garcs, function (p, i) {
+        p.style.animationDelay = (250 + i * 130) + 'ms';
+        p.classList.add('is-drawn');
+      });
+    };
+    if (reduced) { globe.classList.add('is-live'); }
+    else { setTimeout(liveGlobe, 450); }
+  }
+
+  /* ---------- AI wave ---------- */
+  Array.prototype.forEach.call(document.querySelectorAll('.wv'), function (path) {
+    var len = 900;
+    try { len = Math.ceil(path.getTotalLength()); } catch (e) {}
+    path.style.setProperty('--wlen', len);
+  });
 
   /* ---------- floating particles ---------- */
   var field = document.getElementById('particles');
